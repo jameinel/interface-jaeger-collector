@@ -32,11 +32,10 @@ class JaegerCollectorProvides(RelationBase):
         conv.remove_state('{relation_name}.connected')
         conv.set_state('{relation_name}.broken')
 
-    def configure(self, port, cluster_name):
+    def configure(self, port):
         conv = self.conversation()
         conv.set_remote(data={
             'port': port,
-            'cluster_name': cluster_name
             })
 
     @property
